@@ -7,7 +7,7 @@
  */
 
 header("Content-type:text/html; charset=utf-8");
-
+/*
 if($con = mysqli_connect("localhost","easy", "123456", "easy")){
         echo "Connected";
 }else{
@@ -22,4 +22,7 @@ if($ins = mysqli_query($con,$sql)){
     mysqli_close($con);
     echo "Insert Error And Closed";
 }
+*/
+
+echo "光光,你好呀!哈哈哈";
 ?>
