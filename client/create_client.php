@@ -17,7 +17,7 @@ if($con ->connect_errno){
 }
 $con->set_charset('utf8');
 
-$sql = "INSERT client (client_name, client_sex, client_add, client_phone) VALUES ('".$_POST["clientName"]."', '".$_POST["clientSex"]."', '".$_POST["clientAdd"]."', '".$_POST["clientPhone"]."');";
+$sql = "INSERT client (clientName, clientSex, clientAdd, clientPhone) VALUES ('".$_POST["clientName"]."', '".$_POST["clientSex"]."', '".$_POST["clientAdd"]."', '".$_POST["clientPhone"]."');";
 $res = $con -> query($sql);
 
 if($res){

@@ -24,7 +24,8 @@ if($con ->connect_errno){
 $con->set_charset('utf8');
 //此处插入数据库操作
 
-$sql = "SELECT username, userpwd FROM user WHERE username='". $uname ."' AND userpwd='". $upwd ."'";
+$sql = /** @lang text */
+    "SELECT username, userpwd FROM user WHERE username='". $uname ."' AND userpwd='". $upwd ."'";
 
 $con_result = @$con -> query($sql);
 
