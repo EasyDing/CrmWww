@@ -18,7 +18,7 @@ $con->set_charset('utf8');
 //此处插入数据库操作
 
 $sql = /** @lang text */
-    "SELECT * FROM warehouse";
+    "SELECT warehouseName FROM warehouse";
 
 $con_result = @$con -> query($sql);
 
