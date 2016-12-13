@@ -18,7 +18,7 @@ if($con ->connect_errno){
 $con->set_charset('utf8');
 
 $sql = /** @lang text */
-    "SELECT * FROM warehouse_item WHERE warehouseItemName='". $_POST["warehouseItemName"] ."' AND userpwd='". $_POST["warehouseItemWarehouseName"] ."'";
+    "SELECT * FROM warehouse_item WHERE warehouseItemName='". $_POST["warehouseItemName"] ."' AND warehouseItemWarehouseName='". $_POST["warehouseItemWarehouseName"] ."'";
 
 $con_result = @$con -> query($sql);
 
