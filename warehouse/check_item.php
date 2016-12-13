@@ -28,12 +28,15 @@ if($con_result && $con_result -> num_rows > 0){
         $rows[] = $row;
     }
 
-    echo "{\"status\":\"Success\",\"message\":\"\",\"data\":";
-    echo json_encode($rows);
-    echo "}";
+
+    echo "{\"status\":\"Success\",\"message\":\"该仓库存在该品类\"}";
+
+//    echo "{\"status\":\"Success\",\"message\":\"\",\"data\":";
+//    echo json_encode($rows);
+//    echo "}";
 
 }else{
-    echo "{\"status\":\"Fail\",\"message\":\"该仓库已存在该品类\"}";
+    echo "{\"status\":\"Fail\",\"message\":\"该仓库无该品类，允许插入\"}";
 }
 
 
