@@ -13,3 +13,15 @@ if($con ->connect_errno){
     die('Connect Error: '.$con->connect_errno);
 }
 $con->set_charset('utf8');
+$sql = /** @lang text */
+    "INSERT class (country, farm, classes) VALUES ('".$_POST["country"]."', '".$_POST["farm"]."', '".$_POST["classes"]."')";
+
+$res = $con -> query($sql);
+
+if($res){
+    echo "{\"status\":\"Success\",\"message\":\"\",\"data\":[]}";
+}else{
+    echo "{\"status\":\"Fail\",\"message\":\"". $con -> errno . ":" . $con ->error ."\",\"data\":}";
+}
+
+$con -> close();
