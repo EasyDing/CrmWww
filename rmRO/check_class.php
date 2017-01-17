@@ -18,7 +18,7 @@ if($con ->connect_errno){
 $con->set_charset('utf8');
 
 $sql = /** @lang text */
-    "SELECT * FROM class WHERE country='". $_POST["country"] ."' AND farm='". $_POST["farm"] ."' AND class='". $_POST["classes"] ."'";
+    "SELECT * FROM class WHERE country='". $_POST["country"] ."' AND farm='". $_POST["farm"] ."' AND classes='". $_POST["classes"] ."'";
 
 $con_result = @$con -> query($sql);
 
