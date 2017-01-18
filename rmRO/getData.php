@@ -13,9 +13,20 @@ if($con ->connect_errno){
 }
 $con->set_charset('utf8');
 
+switch ($_POST["var"]){
+    case "country":
+        $sql = /** @lang text */
+            "SELECT DISTINCT country FROM class";
+        break;
+    case "farm":
+        $sql = /** @lang text */
+            "SELECT DISTINCT farm FROM class";
+        break;
+    case "class":
+        break;
 
-$sql = /** @lang text */
-        "SELECT DISTINCT ".$_POST["var"]." FROM class";
+}
+
 
 $con_result = @$con -> query($sql);
 
