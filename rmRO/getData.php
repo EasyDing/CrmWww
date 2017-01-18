@@ -15,7 +15,7 @@ $con->set_charset('utf8');
 
 
 $sql = /** @lang text */
-        "SELECT DISTINCT country FROM class";
+        "SELECT DISTINCT ".$_POST["var"]." FROM class";
 
 $con_result = @$con -> query($sql);
 
