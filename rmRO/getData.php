@@ -20,7 +20,7 @@ switch ($_POST["var"]){
         break;
     case "farm":
         $sql = /** @lang text */
-            "SELECT DISTINCT farm FROM class WHERE country='".$_POST["farm"]."'";
+            "SELECT DISTINCT farm FROM class WHERE country='".$_POST["country"]."'";
         break;
     case "class":
         $sql = /** @lang text */
