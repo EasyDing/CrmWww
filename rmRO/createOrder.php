@@ -17,8 +17,10 @@ $con->set_charset('utf8');
 
 $sql1=/** @lang text */
     "SELECT classId FROM class WHERE country='". $_POST["country"]."' AND farm='".$_POST["farm"]."' AND classes='".$_POST["classes"]."';";
+$sql3=/** @lang text */
+    "SELECT classId FROM class WHERE country='巴拿马' AND farm='哈特曼' AND classes='红酒卡杜拉';";
 
-$con_result = @$con -> query($sql);
+$con_result = @$con -> query($sql1);
 
 if($con_result && $con_result -> num_rows > 0) {
 
