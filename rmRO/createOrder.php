@@ -27,7 +27,6 @@ if($con_result && $con_result -> num_rows > 0) {
     while ($row = $con_result->fetch_assoc()) {
         $classId = $row["classId"];
     }
-    echo $classId;
 
     $sql2 = /** @lang text */
         "INSERT INTO rmRO.`order` (`cId`,`weight`) VALUES (" . $classId . ",'" . $_POST["weight"] . "'')";
