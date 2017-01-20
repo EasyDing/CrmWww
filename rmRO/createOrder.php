@@ -27,20 +27,23 @@ if($con_result && $con_result -> num_rows > 0) {
     while ($row = $con_result->fetch_assoc()) {
         $rows[] = $row;
     }
+
+
+    echo "{\"status\":\"Success\",\"message\":\"\",\"data\":";
+    echo json_encode($rows);
+    echo "}";
+
+    $sql2 = /** @lang text */
+        "INSERT INTO order (cId,weight) VALUES (" . $rows[0] . ",'" . $_POST["weight"] . "'')";
+
+    $res = @$con->query($sql2);
+
+    if ($res) {
+        echo "{\"status\":\"Success\",\"message\":\"\",\"data\":[]}";
+    } else {
+        echo "{\"status\":\"Fail\",\"message\":\"" . $con->errno . ":" . $con->error . "\",\"data\":}";
+    }
 }
-
-echo $rows[0];
-$sql2 =/** @lang text */
-    "INSERT INTO order (cId,weight) VALUES (".$rows[0].",".$_POST["weight"].")";
-
-$res = @$con -> query($sql2);
-
-if($res){
-    echo "{\"status\":\"Success\",\"message\":\"\",\"data\":[]}";
-}else{
-    echo "{\"status\":\"Fail\",\"message\":\"". $con -> errno . ":" . $con ->error ."\",\"data\":}";
-}
-
 
 
 $con->close();
