@@ -28,7 +28,7 @@ if($con_result && $con_result -> num_rows > 0) {
         $classId = $row["classId"];
     }
 
-    $time = date("Y-m-d H:i:s");
+    $time = date("Y-m-d H:i:s",strtotime($srcDataStr));
 
     $sql2 = /** @lang text */
         "INSERT INTO rmRO.`order` (`cId`,`weight`,`date`) VALUES (" . $classId . ",'" . $_POST["weight"] . "',".$time.")";
