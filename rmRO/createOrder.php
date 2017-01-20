@@ -33,6 +33,8 @@ if($con_result && $con_result -> num_rows > 0) {
     echo json_encode($rows);
     echo "}";
 
+    echo $rows;
+
     $sql2 = /** @lang text */
         "INSERT INTO order (cId,weight) VALUES (" . $rows[0] . ",'" . $_POST["weight"] . "'')";
 
