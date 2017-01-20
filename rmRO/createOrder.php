@@ -20,7 +20,7 @@ $sql1=/** @lang text */
 $sql3=/** @lang text */
     "SELECT classId FROM class WHERE country='巴拿马' AND farm='哈特曼' AND classes='水洗卡杜拉';";
 
-$con_result = @$con -> query($sql3);
+$con_result = @$con -> query($sql1);
 
 if($con_result && $con_result -> num_rows > 0) {
 
