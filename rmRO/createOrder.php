@@ -29,7 +29,7 @@ if($con_result && $con_result -> num_rows > 0) {
     }
 
     $sql2 = /** @lang text */
-        "INSERT INTO rmRO.`order` (`cId`,`weight`) VALUES (" . $classId . ",'" . $_POST["weight"] . "')";
+        "INSERT INTO rmRO.`order` (`cId`,`weight`,'date') VALUES (" . $classId . ",'" . $_POST["weight"] . "',".date("Y-m-d H:i:s).");";
 
     $res = @$con->query($sql2);
 
