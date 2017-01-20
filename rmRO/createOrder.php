@@ -20,7 +20,7 @@ $sql1=/** @lang text */
 $sql3=/** @lang text */
     "SELECT classId FROM class WHERE country='巴拿马' AND farm='哈特曼' AND classes='红酒卡杜拉';";
 
-$con_result = @$con -> query($sql1);
+$con_result = @$con -> query($sql3);
 
 if($con_result && $con_result -> num_rows > 0) {
 
@@ -28,6 +28,8 @@ if($con_result && $con_result -> num_rows > 0) {
         $rows[] = $row;
     }
 }
+
+echo $rows[0];
 $sql2 =/** @lang text */
     "INSERT INTO order (cId,weight) VALUES (".$rows[0].",".$_POST["weight"].")";
 
