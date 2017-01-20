@@ -31,7 +31,7 @@ if($con_result && $con_result -> num_rows > 0) {
     $time = date("Y-m-d H:i:s",strtotime($srcDataStr));
 
     $sql2 = /** @lang text */
-        "INSERT INTO rmRO.`order` (`cId`,`weight`,`date`) VALUES (" . $classId . ",'" . $_POST["weight"] . "',".$time.")";
+        "INSERT INTO rmRO.`order` (`cId`,`weight`,`date`) VALUES (" . $classId . ",'" . $_POST["weight"] . "','".$time."')";
 
     $res = @$con->query($sql2);
 
