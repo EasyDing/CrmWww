@@ -27,16 +27,10 @@ if($con_result && $con_result -> num_rows > 0) {
     while ($row = $con_result->fetch_assoc()) {
         $rows[] = $row;
     }
-
-
-    echo "{\"status\":\"Success\",\"message\":\"\",\"data\":";
-    echo json_encode($rows);
-    echo "}";
-
-    echo $rows[0];
+    echo current($rows);
 
     $sql2 = /** @lang text */
-        "INSERT INTO order (cId,weight) VALUES (" . $rows[0] . ",'" . $_POST["weight"] . "'')";
+        "INSERT INTO order (cId,weight) VALUES (" . current($rows) . ",'" . $_POST["weight"] . "'')";
 
     $res = @$con->query($sql2);
 
