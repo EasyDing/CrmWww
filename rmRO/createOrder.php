@@ -27,10 +27,10 @@ if($con_result && $con_result -> num_rows > 0) {
     while ($row = $con_result->fetch_assoc()) {
         $rows[] = $row;
     }
-    echo current($rows);
+    echo $rows["classId"];
 
     $sql2 = /** @lang text */
-        "INSERT INTO order (cId,weight) VALUES (" . current($rows) . ",'" . $_POST["weight"] . "'')";
+        "INSERT INTO order (cId,weight) VALUES (" . $rows["classId"] . ",'" . $_POST["weight"] . "'')";
 
     $res = @$con->query($sql2);
 
