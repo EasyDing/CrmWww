@@ -25,12 +25,12 @@ $con_result = @$con -> query($sql3);
 if($con_result && $con_result -> num_rows > 0) {
 
     while ($row = $con_result->fetch_assoc()) {
-        $rows[] = $row;
+        $classId = $row["classId"];
     }
-    echo $rows["classId"];
+    echo $classId;
 
     $sql2 = /** @lang text */
-        "INSERT INTO order (cId,weight) VALUES (" . $rows["classId"] . ",'" . $_POST["weight"] . "'')";
+        "INSERT INTO `order` (`cId`,`weight`) VALUES (" . $classId . ",'" . $_POST["weight"] . "'')";
 
     $res = @$con->query($sql2);
 
