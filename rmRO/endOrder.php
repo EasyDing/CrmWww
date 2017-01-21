@@ -18,5 +18,12 @@ $sql=/** @lang text */
 
 
 
+$res = $con -> query($sql);
+
+if($res){
+    echo "{\"status\":\"Success\",\"message\":\"\",\"data\":[]}";
+}else{
+    echo "{\"status\":\"Fail\",\"message\":\"". $con -> errno . ":" . $con ->error ."\",\"data\":}";
+}
 $con->close();
 ?>
