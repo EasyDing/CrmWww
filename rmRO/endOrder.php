@@ -14,7 +14,7 @@ if($con ->connect_errno){
 $con->set_charset('utf8');
 
 $sql=/** @lang text */
-    "UPDATE `order` SET flag = 1 WHERE cId = ".$_POST["cId"]." AND flag = 0;";
+    "UPDATE `order` SET flag = 1, endDate = now() WHERE cId = ".$_POST["cId"]." AND flag = 0;";
 
 
 
