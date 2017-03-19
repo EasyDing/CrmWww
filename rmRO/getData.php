@@ -43,7 +43,7 @@ if($con_result && $con_result -> num_rows > 0){
     echo "}";
 
 }else{
-    echo "{\"status\":\"Fail\",\"message\":\"未查询到数据\"}";
+    echo "{\"status\":\"Fail\",\"message\":\"查询失败\"}";
 }
 
 
